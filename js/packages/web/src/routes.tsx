@@ -21,6 +21,7 @@ import {
   MarketAllView,
   ArtsView,
   ProfileView,
+  SaleCreateView,
   ListForSaleView,
   OopsView,
 } from './views';
@@ -129,7 +130,7 @@ export function Routes() {
             <Route
               exact
               path="/listforsale"
-              component={() => <ListForSaleView />}
+              component={() => <SaleCreateView />}
             />
 
             <Route

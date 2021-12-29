@@ -11,7 +11,7 @@ import {
   Input,
 } from 'antd';
 import { TagsTwoTone } from '@ant-design/icons';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 // import {
 //   LineChart,
 //   Line,
@@ -30,7 +30,9 @@ const {TextArea} = Input;
 
 export const EachCollectionNFTView = () => {
 //   const [history, setHistory] = useState([]);
-
+const perItemData1 = useLocation();
+const perItemData = perItemData1.state as any;
+console.log(perItemData);
 const data = [
   { name: 'Page A', uv: 4000, pv: 2400, amt: 2400 },
   { name: 'Page B', uv: 3000, pv: 1398, amt: 2210 },
@@ -81,7 +83,7 @@ const data = [
                     <span>06 favorites</span>
                 </div>
             </div>
-            <Button className='buy-link'><Link to={`/listforsale`}>SELL</Link></Button>
+            <Button className='buy-link'><Link to={{ pathname: `/listforsale`, state: perItemData }} >SELL</Link></Button>
             <div className='chart-area'>
                 <div className='chart-head'>
                     <span className='font-22'><i className="fas fa-chart-line font-22" style={{marginRight: '30px'}}></i>Price History</span>
